@@ -1,0 +1,149 @@
+//<script>
+bouncex.init1Response({
+    "brand_styles": false,
+    "webfonts": false,
+    "cookie": {
+        "swv": false,
+        "did": "4308866947518352192",
+        "vid": 1732179797148322,
+        "v": {
+            "logged_in": "false",
+            "submitted_onsite": false,
+            "ever_logged_in": false,
+            "submitted_email_wellequipped": false,
+            "submitted_email_cocktail": false,
+            "submitted_email_seasonal": false,
+            "submitted_email_cook90": false,
+            "submitted_email_smallplates": false,
+            "submitted_email_topten": false,
+            "submitted_email_daily": false,
+            "submitted_email_vegetarian": false,
+            "submitted_email_quick": false,
+            "ccpa_cali": "true",
+            "reg_gate_submitted": false
+        },
+        "fvt": 1731998943,
+        "ao": 2,
+        "lp": "https%3A%2F%2Fwww.epicurious.com%2Frecipes%2Ffood%2Fviews%2Fhomemade-turkey-stock",
+        "as": 0,
+        "vpv": 1,
+        "d": "d",
+        "r": "",
+        "cvt": 1732179797,
+        "sid": -1,
+        "gcr": 80,
+        "m": 0,
+        "lvt": 1732179797,
+        "campaigns": {
+            "1595596": {
+                "lvt": 1731998978,
+                "lavid": 1,
+                "la": 1731998976,
+                "fsa": 1731998976,
+                "as": 1,
+                "ao": 1,
+                "oa": []
+            },
+            "2447210": {
+                "lvt": 1732170022,
+                "lavid": 1,
+                "la": 1732169937,
+                "fsa": 1731998934,
+                "as": 1,
+                "ao": 2,
+                "oa": [
+                    1731998934,
+                    1732169937
+                ],
+                "io": 1,
+                "wc": 1732170022
+            },
+            "2447215": {
+                "lvt": 1731998978,
+                "lavid": 1
+            }
+        }
+    },
+    "debug": false,
+    "testmode": {
+        "bxtest": false,
+        "office": false,
+        "bxdev": false
+    },
+    "state": {
+        "newvid": true,
+        "iol": true,
+        "tn": 1732179797,
+        "pvid": 1,
+        "gdpr": false,
+        "casl": false,
+        "us": false,
+        "device": {
+            "browser": "Chrome",
+            "version": "130.0.0.0",
+            "platform": "Windows 10",
+            "device_type": "desktop"
+        },
+        "no_kinesis": true,
+        "request_token": "5f003d3e8be099c73b498301aa1b93c9b09921a224911440210488e44cbeb825",
+        "mobile": false,
+        "vip": "152.58.182.11",
+        "geo": {
+            "country": "IN",
+            "country_code": "IN",
+            "country_code3": "IND",
+            "country_name": "India",
+            "region": "WB",
+            "region_name": "West Bengal",
+            "city": "Kolkata",
+            "postal_code": "700006",
+            "zip": "700006",
+            "latitude": 22.5,
+            "longitude": 88.400000000000006,
+            "area_code": "",
+            "dma_code": null,
+            "metro_code": null,
+            "continent_code": "AS"
+        }
+    },
+    "gbi_stacks": false,
+    "creatives": false,
+    "campaigns": false,
+    "gbi2_enabled": false,
+    "ssp_config": {
+        "index": {
+            "s": "507839",
+            "qa_site_id": 167884,
+            "reload": 300000,
+            "stackWeight": 0,
+            "timeout": 2000,
+            "production": true,
+            "jsonp": true,
+            "ssp_priority": 2
+        },
+        "pbm": {
+            "desktop_id": "736875",
+            "mobile_id": "736888",
+            "publisher_id": "156512",
+            "qa_site_id": "248764",
+            "reload": 300000,
+            "timeout": 2000,
+            "endpoint": "hbopenbid.pubmatic.com\/translator?",
+            "user_sync_endpoint": "ads.pubmatic.com\/AdServer\/js\/user_sync.html",
+            "ssp_priority": 1
+        }
+    },
+    "push_filepath": "\/",
+    "sms_enabled": false,
+    "sms_terms_conditions_link": "",
+    "sms_short_codes": [],
+    "brand_name": "",
+    "ads_config": {
+        "freqCapEnabled": false,
+        "adsGoLiveDate": "2020-06-08T04:00:00.000Z"
+    },
+    "visit_cookie_updates": {
+        "is_go_session": false,
+        "is_gp_session": false
+    }
+});

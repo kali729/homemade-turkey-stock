@@ -1,0 +1,443 @@
+(()=>{var e,t,r,o={71517:(e,t,r)=>{const o=r(5556),a=r(96540),{useIntl:n}=r(37243),{default:i}=r(1165),l=r(25695).A,{CooksNotesWrapper:s}=r(13773),{trackComponent:d}=r(92716),{interactionResponse:c}=r(56187),p=new i({});function u(e){a.useEffect((()=>{(async()=>{await c(),d("CooksNotes")})()}),[]);const{formatMessage:t}=n();let r=t(l.cooksNote);return e&&e.prepNotesHed&&(r=e.prepNotesHed),a.createElement(s,null,!!e.prepNotes&&a.createElement(a.Fragment,null,a.createElement("div",null,r),a.createElement("div",null,p.convert(e.prepNotes))))}u.propTypes={prepNotes:o.any,prepNotesHed:o.any},e.exports=u},13773:(e,t,r)=>{const o=r(75999).default,{getColorToken:a}=r(26865),n=o.div.withConfig({displayName:"CooksNotesWrapper"})`
+  font-style: italic;
+
+  a {
+    text-decoration: none;
+    color: ${a("colors.discovery.lead.primary.link")};
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+`;e.exports={CooksNotesWrapper:n}},25695:(e,t,r)=>{const o=r(37243);t.A=(0,o.defineMessages)({cooksNote:{id:"RecipePage.CooksNote",defaultMessage:"Cooks' Note",description:"Default"}})},3138:(e,t,r)=>{const{federatedGraphqlService:o}=r(5736),{addRecentlyViewedItem:a}=r(50643);t.addRecentlyViewed=async(e,t,r)=>{const n={copilotId:t,organizationId:r};try{return await o({federatedGraphqlUrl:e,query:a,variables:n,queryLabelForError:"addRecentlyViewed"})||{}}catch(e){return console.error(e),{}}}},80908:(e,t,r)=>{const o=r(96540),a=r(5556),{default:n}=r(1165),{useIntl:i}=r(37243),l=r(56449),{trackComponent:s}=r(92716),{interactionResponse:d}=r(56187),{InstructionsWrapper:c,InstructionListHed:p,InstructionGroupWrapper:u,InstructionListWrapper:m,InstructionGroupHed:g,InstructionHedLarge:y,InstructionHedSmall:h}=r(6052),f=r(67120),b=r(64930),C=r(75871),S=r(90562),w=r(31830),k=r(98126).A,E={clip:f,image:f,cneembed:b,product:C,"callout:group-2":w,"callout:group-3":w,"callout:group-4":S},P=new n({"inline-embed":e=>({type:E[e.type],props:e.props})}),I=({className:e,hasHigherMarginBottom:t=!1,hed:r,instructionGroups:a=[],hasInstructionGroupDivider:n,hasThinBorder:f=!1,instructionHedStrategy:b="labelled-numerical",instructionHedStyle:C="small"})=>{o.useEffect((()=>{(async()=>{await d(),s("InstructionList")})()}),[]);const{formatMessage:S}=i();if(!a||0===a.length)return null;let w=1;return o.createElement(c,{className:e,"data-testid":"InstructionsWrapper",hasHigherMarginBottom:t},r&&o.createElement(p,{hasThinBorder:f},r),o.createElement(u,{key:w,hasDivider:n},a.map((({dangerousHed:e,steps:t=[]},r)=>o.createElement(m,{key:`instruction-group-${r}`},e&&o.createElement(g,{dangerouslySetInnerHTML:{__html:e},isFirstGroup:0===r,hasDivider:n}),t.map((({descriptionJsonMl:e},r)=>{const i=0===r,s=1===a.length&&1===t.length,d="labelled-numerical"===b?`${S(k.instructionStepText)} ${w}`:`${w}.`,c="small"===C?h:y;return w++,o.createElement(o.Fragment,{key:r},!s&&o.createElement(c,{hasDivider:n,isFirstStep:i},d),e.map(((e,t)=>l(e)?o.createElement(o.Fragment,{key:t},P.convert(e)):"")))})))))))};I.displayName="InstructionList",I.propTypes={className:a.string,hasHigherMarginBottom:a.bool,hasInstructionGroupDivider:a.bool,hasThinBorder:a.bool,hed:a.string,instructionGroups:a.arrayOf(a.shape({dangerousHed:a.string,steps:a.arrayOf(a.shape({descriptionJsonMl:a.array.isRequired}))})),instructionHedStrategy:a.oneOf(["numerical","labelled-numerical"]),instructionHedStyle:a.oneOf(["small","large"])},e.exports=I},66816:(e,t,r)=>{const{asConfiguredComponent:o}=r(12892),a=r(80908);e.exports=o(a,"InstructionList")},6052:function(e,t,r){var o=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0}),t.InstructionHedLarge=t.InstructionHedSmall=t.InstructionGroupHed=t.InstructionListHed=t.InstructionStepWrapper=t.InstructionListWrapper=t.InstructionGroupWrapper=t.InstructionsWrapper=void 0;const a=o(r(75999)),n=r(76955),i=r(26865);t.InstructionsWrapper=a.default.div.withConfig({displayName:"InstructionsWrapper"})`
+  margin-bottom: ${(0,i.calculateSpacing)(4)};
+
+  ${({hasHigherMarginBottom:e})=>e&&`margin-bottom: ${(0,i.calculateSpacing)(6)};`}
+`,t.InstructionGroupWrapper=a.default.ol.withConfig({displayName:"InstructionGroupWrapper"})`
+  margin-top: ${(0,i.calculateSpacing)(4)};
+  margin-left: 0;
+  padding-left: 0;
+`,t.InstructionListWrapper=a.default.li.withConfig({displayName:"InstructionListWrapper"})`
+  margin-bottom: ${(0,i.calculateSpacing)(4)};
+  list-style-type: none;
+
+  ${({theme:e})=>(({theme:e})=>`\n  strong {\n    ${(0,i.getTypographyStyles)(e,"typography.definitions.consumptionEditorial.description-feature")}\n  }\n\n  p {\n    margin: ${(0,i.calculateSpacing)(1)} 0;\n    ${(0,i.getColorStyles)(e,"color","colors.consumption.body.standard.body")};\n\n    ${(0,i.getTypographyStyles)(e,"typography.definitions.consumptionEditorial.body-core")};\n    };\n  }\n\n  figure {\n    margin: 0;\n  }\n\n  a:not(.button) {\n    ${(0,i.getLinkStyles)(e,"colors.consumption.body.standard.link","colors.consumption.body.standard.link-hover")}\n    transition: color 200ms ease;\n  }\n\n  img {\n    width: 100%;\n  }\n\n  .responsive-clip {\n    display: block;\n  }\n`)({theme:e})};
+`,t.InstructionStepWrapper=a.default.div.withConfig({displayName:"InstructionStepWrapper"})``,t.InstructionListHed=(0,a.default)(n.BaseText).withConfig({displayName:"InstructionListHed"})`
+  border-bottom: 2px solid;
+  padding-bottom: ${(0,i.calculateSpacing)(2)};
+
+  ${({theme:e})=>(0,i.getColorStyles)(e,"border-color","colors.consumption.body.standard.divider")};
+
+  ${({hasThinBorder:e,theme:t})=>e&&`\n        border-width: 0 0 1px;\n        ${(0,i.getColorStyles)(t,"border-color","colors.consumption.lead.standard.divider")};\n      `}
+`,t.InstructionListHed.defaultProps={as:"h2",colorToken:"colors.consumption.body.standard.subhed",typeIdentity:"typography.definitions.consumptionEditorial.subhed-aux-primary"},t.InstructionGroupHed=(0,a.default)(n.BaseText).withConfig({displayName:"InstructionGroupHed"})`
+  ${({isFirstGroup:e,hasDivider:t})=>t&&`\n    ${!e&&`\n        border-top: 2px solid;\n        margin-top: ${(0,i.calculateSpacing)(5)};\n        padding-top: ${(0,i.calculateSpacing)(4)};\n      `}`}
+`,t.InstructionGroupHed.defaultProps={as:"h3",colorToken:"colors.consumption.body.standard.subhed",topSpacing:4,typeIdentity:"typography.definitions.globalEditorial.context-title"};const l=(0,a.default)(n.BaseText).withConfig({displayName:"InstructionHed"})`
+  ${({hasDivider:e,theme:t,isFirstStep:r})=>e&&`\n      ${r?`\n              border-top: none;\n              margin-top: ${(0,i.calculateSpacing)(4)};\n            `:`\n              border-top: 2px solid;\n              margin-top: ${(0,i.calculateSpacing)(5)};\n              padding-top: ${(0,i.calculateSpacing)(4)};\n              ${(0,i.getColorStyles)(t,"border-color","colors.consumption.body.standard.divider")}\n            `}\n    `};
+`;l.defaultProps={as:"h4",bottomSpacing:1,topSpacing:4},t.InstructionHedSmall=(0,a.default)(l).withConfig({displayName:"InstructionHedSmall"})``,t.InstructionHedSmall.defaultProps={colorToken:"colors.consumption.body.standard.subhed",typeIdentity:"typography.definitions.consumptionEditorial.subhed-aux-secondary"},t.InstructionHedLarge=(0,a.default)(l).withConfig({displayName:"InstructionHedLarge"})``,t.InstructionHedLarge.defaultProps={colorToken:"colors.consumption.body.standard.subhed",typeIdentity:"typography.definitions.globalEditorial.numerical-large"}},98126:(e,t,r)=>{const o=r(37243);t.A=(0,o.defineMessages)({instructionStepText:{id:"InstructionList.StepText",defaultMessage:"Step",description:"Default step text"}})},18421:(e,t,r)=>{const o=r(96540),a=r(5556),n=r(30830),i=r(73275),{trackComponent:l}=r(92716),{interactionResponse:s}=r(56187),d={clip:i,image:i},c=e=>d[e]?d[e]:null,p={clip:["image"],image:["image"]},u=(e,t)=>{const r=p[t];if(!r)return null;let o={};return r.forEach((t=>{o={...o,...e[t]}})),o},m=({children:e,childTypes:t})=>{o.useEffect((()=>{(async()=>{await s(),l("CarouselEmbed")})()}),[]);const r=[],a=o.Children.toArray(e).filter(((e,o)=>{const a=t[o];return!!c(a)&&(r.push(a),!0)}));return 0===o.Children.count(a)?null:o.createElement(n,{controlPosition:"bottom"},a.map((({props:e},t)=>{const a=r[t],{EmbedComponent:i,embedProps:l}=((e,t)=>({EmbedComponent:c(t),embedProps:u(e,t)}))(e,a);return i&&o.createElement(n.CarouselItem,{key:`carousel-item-${t}`,width:"100%"},o.createElement(i,{...l}))})))};m.propTypes={children:a.node,childTypes:a.arrayOf(a.string)},e.exports=m},90562:(e,t,r)=>{e.exports=r(18421)},6995:(e,t,r)=>{const o=r(96540),a=r(5556),n=r(39832),i=r(73275),{trackComponent:l}=r(92716),{interactionResponse:s}=r(56187),{CookbookCardWrapper:d,CookbookCardImageWrapper:c,CookbookCardContent:p}=r(26242),u=({image:e,url:t})=>t?o.createElement(n,{href:t},o.createElement(i,{...e})):o.createElement(i,{...e});u.propTypes={image:a.shape(i.propTypes).isRequired,url:a.string};const m=({image:e,dangerousCopyrightDisplay:t,url:r,hed:a})=>(o.useEffect((()=>{(async()=>{await s(),l("CookbookCard")})()}),[]),o.createElement(d,null,e&&o.createElement(c,null,o.createElement(u,{image:e,url:r})),t?o.createElement(p,{dangerouslySetInnerHTML:{__html:t}}):o.createElement("span",null,a)));m.propTypes={dangerousCopyrightDisplay:a.string.isRequired,hed:a.string,image:a.shape(i.propTypes),url:a.string},e.exports=m},27438:(e,t,r)=>{e.exports=r(6995)},26242:(e,t,r)=>{const o=r(75999).default,{calculateSpacing:a,getColorToken:n}=r(26865),{BaseText:i}=r(76955),l=o.section.withConfig({displayName:"CookbookCardWrapper"})`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: ${a(4)};
+
+  span {
+    color: ${n("colors.consumption.body.standard.body")};
+  }
+`,s=o.div.withConfig({displayName:"CookbookCardImageWrapper"})`
+  flex: 0 0 ${a(10)};
+  margin-right: ${a(2)};
+  width: 77px;
+`,d=o(i).withConfig({displayName:"CookbookCardContent"})`
+  flex: 1 1;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+`;d.defaultProps={as:"div",colorToken:"colors.consumption.body.standard.body",typeIdentity:"typography.definitions.consumptionEditorial.body-core"},e.exports={CookbookCardWrapper:l,CookbookCardImageWrapper:s,CookbookCardContent:d}},34743:(e,t,r)=>{const o=r(5556),a=r(96540),{useIntl:n}=r(37243),i=r(57668).A,{getIngredientValues:l}=r(94383),{trackComponent:s}=r(92716),{interactionResponse:d}=r(56187),{Wrapper:c,List:p,Hed:u,SubHed:m,Amount:g,Description:y}=r(5362),h=({className:e,ingredientGroups:t=[],hasHigherMarginBottom:r=!1,hasThinBorder:o=!1,hed:h,ingredientColumns:f=2,nutritionalInfo:b,hasDescriptionBodyCore:C=!1})=>{a.useEffect((()=>{(async()=>{await d(),s("IngredientList")})()}),[]);const{formatMessage:S}=n();return a.createElement(c,{className:e,"data-testid":"IngredientList",hasHigherMarginBottom:r},a.createElement(u,{hasThinBorder:o},b?S(i.nutritionHedText):h||S(i.hedText)),a.createElement(p,{ingredientColumns:f},t.map(((e,t)=>a.createElement(a.Fragment,{key:t},e.dangerousHed&&a.createElement(m,{dangerouslySetInnerHTML:{__html:e.dangerousHed}}),e.ingredients&&e.ingredients.length>0&&a.createElement(a.Fragment,null,e.ingredients.map((({dangerousDescription:e})=>{if(1===f)return a.createElement(y,{key:e,ingredientColumns:f,dangerouslySetInnerHTML:{__html:e}});const{amount:t,description:r}=l(e);return a.createElement(a.Fragment,{key:e},a.createElement(g,{dangerouslySetInnerHTML:{__html:t}}),a.createElement(y,{dangerouslySetInnerHTML:{__html:r}}))})))))),b&&((e,t)=>e?.split(/[\n,]/).map((e=>a.createElement(y,{key:e,dangerouslySetInnerHTML:{__html:e},hasDescriptionBodyCore:t}))))(b,C)))};h.propTypes={className:o.string,hasDescriptionBodyCore:o.bool,hasHigherMarginBottom:o.bool,hasThinBorder:o.bool,hed:o.string,ingredientColumns:o.number,ingredientGroups:o.arrayOf(o.shape({dangerousHed:o.string,ingredients:o.arrayOf(o.shape({dangerousDescription:o.string.isRequired})).isRequired}).isRequired),nutritionalInfo:o.string},h.displayName="IngredientList",e.exports=h},41310:(e,t,r)=>{const{asConfiguredComponent:o}=r(12892),a=r(26598);e.exports=o(a,"IngredientList")},5362:(e,t,r)=>{const o=r(75999).default,{getColorStyles:a,getTypographyStyles:n,calculateSpacing:i}=r(26865),{BaseText:l}=r(18730),s=o.div.withConfig({displayName:"Wrapper"})`
+  margin-bottom: ${i(4)};
+  font-size: 0;
+
+  ${({hasHigherMarginBottom:e})=>e&&`margin-bottom: ${i(6)};`}
+`,d=o(l).withConfig({displayName:"Hed"})`
+  margin-bottom: ${i(3)};
+  border-bottom: 2px solid;
+  padding-bottom: ${i(2)};
+
+  ${({theme:e})=>a(e,"border-color","colors.consumption.body.standard.divider")};
+
+  ${({hasThinBorder:e,theme:t})=>e&&`\n        border-width: 0 0 1px;\n        ${a(t,"border-color","colors.consumption.lead.standard.divider")};\n      `}
+`;d.defaultProps={as:"h2",colorToken:"colors.consumption.body.standard.subhed",typeIdentity:"typography.definitions.consumptionEditorial.subhed-aux-primary"};const c=o.div.withConfig({displayName:"List"})`
+  display: grid;
+  grid-gap: ${i(2)}; /* prefixed version of gap for Safari */
+  grid-template-columns: ${({ingredientColumns:e})=>1===e?"1fr":"max-content 1fr"};
+  gap: ${i(2)};
+
+  & > :first-child {
+    padding-top: 0;
+  }
+`,p=o(l).withConfig({displayName:"SubHed"})`
+  grid-column: 1/-1;
+  padding-top: ${i(.5)};
+`;p.defaultProps={as:"h3",colorToken:"colors.consumption.body.standard.subhed",typeIdentity:"typography.definitions.globalEditorial.context-title"};const u=o(l).withConfig({displayName:"Amount"})`
+  grid-column: 1;
+  text-align: right;
+`;u.defaultProps={colorToken:"colors.consumption.body.standard.body",typeIdentity:"typography.definitions.consumptionEditorial.description-core"};const m=o(l).withConfig({displayName:"Description"})`
+  ${({hasDescriptionBodyCore:e,theme:t})=>e&&`${n(t,"typography.definitions.consumptionEditorial.body-core")};\n`}
+`;m.defaultProps={as:"div",colorToken:"colors.consumption.body.standard.body",typeIdentity:"typography.definitions.consumptionEditorial.description-core"},e.exports={Wrapper:s,List:c,Hed:d,SubHed:p,Amount:u,Description:m}},57668:(e,t,r)=>{const o=r(37243);t.A=(0,o.defineMessages)({hedText:{id:"IngredientList.hedText",defaultMessage:"Ingredients",description:"Ingredient List component hed text",isConfigurable:!0},nutritionHedText:{id:"IngredientList.nutritionHedText",defaultMessage:"Nutrition Per Serving",description:"Ingredient List component hed text",isConfigurable:!0}})},94383:e=>{const t="[\\u00BC-\\u00BE\\u2150-\\u215E]",r=`(?:\\d+${t}|\\d+|${t})`,o=`${r}(?:(?:\\sto\\s)|(?:\\sor\\s)|(?:\\s?[\\u2010-\\u2015\\u002d]\\s?))${r}`;e.exports={getIngredientValues:e=>{if(!e)return{amount:void 0,description:void 0};const t=e.replace(/&#8211;/g,"–").replace(/&#8212;/g,"—"),a=new RegExp(`^(${o})`);let[,n,i]=t.split(a);if(!n){const e=new RegExp(`^(${r})`);[,n,i]=t.split(e)}return i||(i=e),i=i.trim(),n&&(n=n.replace(/–/g,"&#8211;").replace(/—/g,"&#8212;")),i=i.replace(/–/g,"&#8211;").replace(/—/g,"&#8212;"),{amount:n,description:i}}}},26598:(e,t,r)=>{const{asVariation:o}=r(81372),a=r(34743);a.OneColumn=o(a,"OneColumn",{},{ingredientColumns:1}),e.exports=a},2264:(e,t,r)=>{const o=r(5556),a=r(96540),{useIntl:n}=r(37243),i=r(35512).A,{trackComponent:l}=r(92716),{interactionResponse:s}=r(56187),{SmallProductCardWrapper:d,SmallProductCardObject:c,SmallProductCardHeader:p,SmallProductCardImage:u,SmallProductCardBody:m,SmallProductCardOffer:g,SmallProductCardName:y,SmallProductCardLink:h,SmallProductCardPrice:f,SmallProductCardRetailerName:b,SmallProductCardSalePrice:C}=r(36766),S=r(73275),w=a.forwardRef((({className:e,hasSmallProductCardStyles:t,image:r,link:o,name:w,price:k,retailerName:E,salePrice:P},I)=>{const{formatMessage:x}=n();a.useEffect((()=>{(async()=>{await s(),l("SmallProductCard")})()}),[]);const v=((e,t,r)=>e?{label:t||e,component:t?a.createElement(a.Fragment,null,a.createElement(C,{hasSmallProductCardStyles:r},e),a.createElement(f,{hasSmallProductCardStyles:r}," ",t)):a.createElement(f,{hasSmallProductCardStyles:r},e)}:{label:null,component:null})(k,P,t),R=((e,t,r,o)=>{if(!t)return e;const n=r(i.atRetailerNameComponentText,{retailerNameText:t}),l=r(i.atRetailerNameLabel,{finalPriceLabel:e.label,retailerNameText:t}),s=r(i.buyAt,{retailerNameText:t});return{label:e.label?l:s,component:e?.component?a.createElement(a.Fragment,null,e.component,a.createElement(b,{hasSmallProductCardStyles:o}," ",n)):a.createElement(b,{hasSmallProductCardStyles:o},s)}})(v,E,x,t),{label:T,component:$}=R,N={"data-buy-button":!0,"data-offer-retailer":E||"","data-offer-url":o?.url||"","aria-label":T,href:o?.shortUrl||o?.url,onClick:o?.onClick,title:T,rel:"nofollow",target:"_blank"};let B=null;return r&&N.href?B=a.createElement("a",{...N,tabIndex:"-1"},a.createElement(S,{...r})):r&&(B=a.createElement(S,{...r})),a.createElement(d,{className:e,ref:I},a.createElement(c,null,a.createElement(p,null,a.createElement(u,null,B)),a.createElement(m,{hasSmallProductCardStyles:t},w?a.createElement(y,{hasSmallProductCardStyles:t},w):null,T&&$&&N.href?a.createElement(h,{...N},a.createElement(g,null,$)):null)))}));w.propTypes={className:o.string,hasSmallProductCardStyles:o.bool,image:o.shape(S.propTypes),link:o.shape({label:o.string,onClick:o.func,shortUrl:o.string,url:o.string}),name:o.string,price:o.string,retailerName:o.string,salePrice:o.string},e.exports=w},96482:(e,t,r)=>{const o=r(64946),a=r(2264);e.exports=o(a)},36766:(e,t,r)=>{const o=r(75999).default,{BaseLink:a,BaseText:n}=r(76955),{calculateSpacing:i,getColorStyles:l}=r(26865),s=o(n).withConfig({displayName:"SmallProductCardSalePrice"})`
+  text-decoration: line-through;
+  ${({hasSmallProductCardStyles:e,theme:t})=>e&&`${l(t,"color","colors.consumption.body.standard.body")};\n   font-weight: 400; \n  `}
+`;s.defaultProps={as:"span",colorToken:"colors.consumption.body.standard.link",typeIdentity:"typography.definitions.utility.button-utility"};const d=o(n).withConfig({displayName:"SmallProductCardRetailerName"})`
+  ${({hasSmallProductCardStyles:e,theme:t})=>e&&`${l(t,"color","colors.consumption.body.standard.body")};\n  font-weight: 400;\n  `}
+`;d.defaultProps={as:"span",colorToken:"colors.consumption.body.standard.link",typeIdentity:"typography.definitions.utility.button-utility"};const c=o(n).withConfig({displayName:"SmallProductCardPrice"})`
+  ${({hasSmallProductCardStyles:e,theme:t})=>e&&`${l(t,"color","colors.consumption.body.standard.body")};\n   font-weight: 400;\n  `}
+`;c.defaultProps={as:"span",colorToken:"colors.consumption.body.standard.link",typeIdentity:"typography.definitions.utility.button-utility"};const p=o(n).withConfig({displayName:"SmallProductCardOffer"})`
+  /*  stylelint-disable property-no-vendor-prefix,value-no-vendor-prefix */
+  display: -webkit-box;
+  margin-top: ${i(1.5)};
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* stylelint-enable property-no-vendor-prefix,value-no-vendor-prefix */
+`;p.defaultProps={colorToken:"colors.consumption.body.standard.link",typeIdentity:"typography.definitions.utility.button-utility"};const u=o(a).withConfig({displayName:"SmallProductCardLink"})`
+  margin-top: auto;
+`;u.defaultProps={colorToken:"colors.consumption.body.standard.link",hasUnderline:!0,typeIdentity:"typography.definitions.utility.button-utility"};const m=o(n).withConfig({displayName:"SmallProductCardName"})`
+  /*  stylelint-disable property-no-vendor-prefix,value-no-vendor-prefix */
+  display: -webkit-box;
+  margin-top: ${i(1)};
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* stylelint-enable property-no-vendor-prefix,value-no-vendor-prefix */
+  ${({hasSmallProductCardStyles:e})=>e&&"font-weight: 400;"}
+`;m.defaultProps={colorToken:"colors.consumption.body.standard.subhed",typeIdentity:"typography.definitions.consumptionEditorial.subhed-aux-secondary"};const g=o.div.withConfig({displayName:"SmallProductCardBody"})`
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  padding: 0 ${i(1)} ${i(1.5)};
+  text-align: center;
+  ${({hasSmallProductCardStyles:e})=>e&&"text-align: left;"}
+`,y=o.div.withConfig({displayName:"SmallProductCardImage"})`
+  &::before {
+    display: block;
+    ${({theme:e})=>l(e,"background-color","colors.consumption.body.standard.bg-photo")};
+    padding-top: ${({width:e,height:t})=>e&&t?`${e} / ${t}px`:"100%"};
+    content: '';
+  }
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  picture,
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`,h=o.div.withConfig({displayName:"SmallProductCardHeader"})``,f=o.div.withConfig({displayName:"SmallProductCardObject"})`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  height: 100%;
+  ${({theme:e})=>l(e,"border-color","colors.consumption.body.standard.bg-card")};
+`,b=o.div.withConfig({displayName:"SmallProductCardWrapper"})`
+  margin: 0;
+  height: 100%;
+`;e.exports={SmallProductCardWrapper:b,SmallProductCardObject:f,SmallProductCardHeader:h,SmallProductCardImage:y,SmallProductCardBody:g,SmallProductCardOffer:p,SmallProductCardName:m,SmallProductCardLink:u,SmallProductCardPrice:c,SmallProductCardRetailerName:d,SmallProductCardSalePrice:s}},35512:(e,t,r)=>{const o=r(37243);t.A=(0,o.defineMessages)({atRetailerNameComponentText:{id:"SmallProductCard.AtRetailerNameComponentText",defaultMessage:"At {retailerNameText}",description:"SmallProductCard component At RetailerName text"},atRetailerNameLabel:{id:"SmallProductCard.AtRetailerNameLabel",defaultMessage:"{finalPriceLabel} At {retailerNameText}",description:"SmallProductCard component At RetailerName text with price"},buyAt:{id:"SmallProductCard.BuyAt",defaultMessage:"Buy At {retailerNameText}",description:"SmallProductCard component Buy At RetailerName text"}})},64946:(e,t,r)=>{const o=r(5556),a=r(96540);e.exports=e=>{const t=({forwardedRef:t,...r})=>{const o={...r.link,onClick:()=>{r.onClick&&r.onClick(),window.dataLayer&&window.dataLayer.push({event:"buy-button-click"})}};return a.createElement(e,{...r,link:o,ref:t})};return t.propTypes={forwardedRef:o.oneOfType([o.func,o.shape({current:o.any})]),link:o.shape({url:o.string}),onClick:o.func,retailerName:o.string},a.forwardRef(((e,r)=>a.createElement(t,{...e,forwardedRef:r})))}},22949:(e,t,r)=>{const o=r(96540),a=r(32485),n=r(5556),{useState:i,useEffect:l}=r(96540),s=r(58156),d=r(62193),{useIntl:c}=r(37243),p=r(84708).A,u=r(19607),m=r(22652),g=r(96303),{trackComponent:y}=r(92716),{interactionResponse:h}=r(56187),{getInterludePosition:f,recipeStrategies:b}=r(15316),C=r(69389),{ConfiguredDisclaimer:S}=r(74307),w=r(41310),k=r(71517),E=r(59351),{PaymentGateway:P}=r(92807),I=r(10281),x=r(27438),v=r(66657),R=r(86659),T=r(48496),$=r(28433),N=r(59525),B=r(66816),L=r(35676),A=r(31411),{formatInfoSliceItems:M}=r(39311),{calculateSpacing:H}=r(26865),_=r(11125),{getCookie:F}=r(56892),O=r(14935),W=r(92726),{connector:D}=r(57744),{requestGraphService:j}=r(60711),{addUserRating:G,ratingByUser:q}=r(22914),{addRecentlyViewed:U}=r(3138),V=r(90532),z=r(72014),{getVariationNames:Y}=r(81372),{useViewportObserver:J}=r(55030),{FeaturedInCarouselWrapper:K,FeaturedInCarousel:X,GridWithMarginsWrapper:Q,RecipePageWrapper:Z,RecipePagePostArticleAd:ee,RecipePageTagCloud:te,RecipePageSocialIcons:re,RecipePageContentBackground:oe,OverlayActionBar:ae,RecipePageInfoSlice:ne}=r(6322),ie=r(52089),{Commenting:le}=r(81063),se=(e,t)=>{window?.localStorage?.setItem(`recipe-rating-${e}`,t)},de=(e,t=!1)=>{const r={grid:R.ContentWithAdRail,className:"recipe__main-content"};return"OneColumn"===s(e,"ChunkedArticleContent.variation")&&(r.grid=R.WithMargins,r.className="recipe__main-content body__container"),t&&(r.grid=R.TwoUp),r},ce={spacing:{sm:H(1.5),xl:H(2)},width:{sm:`calc(60% - ${H(1.5)})`,lg:`calc(27% - ${H(1.5)})`,xl:`calc(26% - ${H(2)})`,xxl:`calc(21% - ${H(2)})`}},pe=({className:e,commentAttributes:t,communityExperience:{enableCommunityExperience:r}={},featuredInCarouselData:n={},featureFlags:R,hasBottomSpacingOnMobileHeader:L=!1,hasMargin:H=!1,hideRecipePageSocialShare:D=!1,recipe:z,related:Y=[],showFeaturedInCarousel:pe=!1,showFeedbackForm:ue=!0,showRatingForm:me=!0,stickySocialAnchorBottomSelector:ge=".recirc-list-wrapper",stickySocialAnchorTopSelector:ye='[data-testid="RecipePageContentBackground"]',user:he,componentConfig:fe,coreDataLayer:be,userPlatform:Ce,shouldAddToRecentlyViewed:Se=!1,shouldDisplayFirstActionBar:we=!1,shouldDisplaySecondActionBar:ke=!1,actionBarLargeScreenVariation:Ee,isActionBarStickyLargeScreen:Pe,actionBarOneButtons:Ie,actionBarTwoButtons:xe,infoSliceVariation:ve,showTwoColumnsForRecipeInfo:Re=!1,taboola:Te})=>{o.useEffect((()=>{(async()=>{await h(),y("RecipePage")})()}),[]);const{aggregateRating:$e,brandSlug:Ne,campaignUrl:Be,id:Le,lang:Ae,hed:Me,body:He,channelMap:_e,cookbooks:Fe,headerProps:Oe,hideAffiliateDisclaimer:We,hideBookmarkMobile:De,ingredientGroups:je,instructions:Ge,interlude:qe,isAffiliateLinksEnabled:Ue,nutritionalInfo:Ve,prepNotes:ze,prepNotesHed:Ye,productCarousel:Je,recircRelated:Ke,reviewFormSignInURL:Xe,ratingFormSignInURL:Qe,reviewsCount:Ze,servingSizeInfo:et,showBookmark:tt,socialMedia:rt,tagCloud:ot,times:at}=z,{tags:nt}=ot,{enableActionBar:it}=R,{commentingUrl:lt,organizationId:st}=t,{description:dt}=et||{},ct=N[ve]||N,pt=s(qe,"strategy.enabled"),ut=f(qe,b),[mt,gt]=i(null),[yt,ht]=i(!1),[ft,bt]=i(!1),[Ct,St]=i(!1),[wt,kt]=i(!1),[Et,Pt]=i(!1);J(".first-action-bar",{threshold:1},(e=>{kt(!!e)})),J(".end-action-bar",{threshold:1},(e=>{bt(!!e)})),J(".recipe-body",{threshold:0},(e=>{St(!!e)})),l((()=>{Pt(!wt&&Ct&&!ft)}),[wt,Ct,ft]);const{formatMessage:It}=c(),xt={...at,yield:dt},vt=M(xt,It,p),Rt=de(fe),Tt=de(fe,!0),{site:{orgId:$t}}=be,{federatedGraphqlUrl:Nt}=Ce;l((()=>{!async function(){const e=(e=>{let t=window?.localStorage?.getItem(`recipe-rating-${e}`)||null;return null!==t&&(t=Number(t),isNaN(t)&&(t=null)),t})(Le);if(null!==e&&gt(e),he.isAuthenticated&&he.amguuid){const e={operationName:"coralreviews",query:q,variables:{storyID:Le,userID:he.amguuid,siteID:st}};try{const t=await j(lt,e),r=t?.coralreviews??[];if(r.length>0&&null!==r[0].rating){const e=r[0].rating.rating;null!==e&&(gt(e),se(Le,e))}}catch(e){throw console.warn(e),e}}}()}),[Le,he.isAuthenticated,he.amguuid,lt,st]),l((()=>{Se&&he.isAuthenticated&&he.amguuid&&U(Nt,Le,$t)}),[Se,he.isAuthenticated,he.amguuid,$t,Le,Nt]),l((()=>{window.innerWidth<1025?ht(!0):ht(!1);const e=()=>{window.innerWidth<1025?ht(!0):ht(!1)};return window.addEventListener("resize",e),()=>window.removeEventListener("resize",e)}),[]);let Bt=[];return Je?.products?.length>0&&(Bt=Je.products.map((e=>({image:e.image,link:{shortUrl:e.purchaseUri,url:e.offerUrl},name:e.name,price:e.price,retailerName:e.sellerName,salePrice:e.reducedPrice})))),o.createElement(Z,{channelMap:_e,className:e,featureFlags:R,hasBaseAds:!0,hasFooterAdsMargins:!0,lang:Ae,showTwoColumnsForRecipeInfo:Re},(tt||r)&&o.createElement(O,null),o.createElement("article",{"data-testid":"RecipePageArticle"},o.createElement("div",{"data-testid":"RecipePageLedBackground"},Oe.sponsoredContentHeaderProps&&o.createElement(A,{...Oe.sponsoredContentHeaderProps,className:"light-theme"}),o.createElement(C,{...Oe,brandSlug:Ne,className:a(Oe.className),hasBottomSpacingOnMobileHeader:L,hasMargin:H,rating:{rating:$e,count:Ze},socialMedia:rt,stickySocialAnchorBottom:{selector:ge,edge:"bottom"},stickySocialAnchorTop:{selector:ye,edge:"top"}})),o.createElement(oe,{"data-testid":"RecipePageContentBackground",showTwoColumnsForRecipeInfo:Re},o.createElement(Rt.grid,null,o.createElement("div",{className:Rt.className,"data-testid":"recipe__main-content","data-journey-hook":"recipe-content"},o.createElement("div",{className:"first-action-bar"},we&&o.createElement(V,{actionBarLargeScreenVariation:Ee,isActionBarStickyLargeScreen:Pe,actionBarButtons:yt?Ie.mobile:Ie.desktop,showActionBar:it})),rt&&!D?o.createElement(re,{hideBookmarkMobile:De,...rt}):null,!We&&Be&&o.createElement(S,{hasTopRule:!1,isEnabled:Ue}),He?.length&&o.createElement(m,{body:He,className:"recipe-body"}),Bt.length>0&&o.createElement(o.Fragment,null,!We&&o.createElement(S,{hasTopRule:!1,isEnabled:!Be}),o.createElement(_,{products:Bt})),"start"===ut&&o.createElement(g,{...qe,isRightRail:!1}),we&&it&&o.createElement("div",{className:"end-action-bar"}),o.createElement(ae,{className:"overlay-action-bar"},Et&&we&&o.createElement(V,{actionBarLargeScreenVariation:Ee,isActionBarStickyLargeScreen:Pe,actionBarButtons:yt?Ie.mobile:Ie.desktop,showActionBar:it,isFirstActionBar:we,showOverlayActionBar:Et})),Re&&o.createElement(ie,{max:"md"},o.createElement(P,{group:"ads"},o.createElement(u,{position:"mid-content",shouldDisplayLabel:!0,shouldHoldSpace:!0}))),o.createElement(ie,{min:"xl"},(e=>Re&&e?null:o.createElement(o.Fragment,null,vt&&vt.length?o.createElement(ne,{as:ct,items:vt,infoSliceHed:It(p.recipeInfo)}):null,o.createElement(w,{ingredientGroups:je,yieldDescription:dt}),o.createElement(B,{instructionGroups:Ge})))),Ve&&o.createElement(w,{nutritionalInfo:Ve,ingredientColumns:1}),o.createElement(W,null),ze&&o.createElement(k,{prepNotes:ze,prepNotesHed:Ye}),o.createElement(ie,{min:"xl"},(e=>Re&&e?null:o.createElement(o.Fragment,null,Fe.map((e=>o.createElement(x,{...e,key:e.id}))),ke&&o.createElement(V,{actionBarLargeScreenVariation:Ee,isActionBarStickyLargeScreen:Pe,actionBarButtons:yt?xe.mobile:xe.desktop,showActionBar:it}),nt&&o.createElement(te,{tags:nt}),"default"===ut&&o.createElement(g,{...qe,isRightRail:!1}))))),o.createElement($,{showTwoColumnsForRecipeInfo:Re},o.createElement("aside",{"data-testid":"RecipePageAside"},o.createElement(P,{group:"ads"},((e,t)=>e&&t.isRailEligible&&o.createElement(g,{...t,isRightRail:!0}))(pt,qe),o.createElement(u,{position:"rail"}))))),Re&&o.createElement(ie,{min:"md"},(e=>e&&o.createElement(o.Fragment,null,o.createElement(P,{group:"ads"},o.createElement(u,{position:"mid-content",shouldDisplayLabel:!0,shouldHoldSpace:!0})),o.createElement(Q,null,vt&&vt.length?o.createElement(ne,{as:ct,items:vt,infoSliceHed:It(p.recipeInfo)}):null),o.createElement(Tt.grid,null,o.createElement(w,{ingredientGroups:je,yieldDescription:dt}),o.createElement("div",null,o.createElement(B,{instructionGroups:Ge}),Fe.map((e=>o.createElement(x,{...e,key:e.id}))),ke&&o.createElement(V,{actionBarLargeScreenVariation:Ee,isActionBarStickyLargeScreen:Pe,actionBarButtons:yt?xe.mobile:xe.desktop,showActionBar:it}),nt&&o.createElement(te,{tags:nt}),"default"===ut&&o.createElement(g,{...qe,isRightRail:!1})))))),!Be&&o.createElement("div",null,o.createElement(P,{group:"ads"},o.createElement(u,{position:"mid-content",shouldDisplayLabel:!0,shouldHoldSpace:!0})),o.createElement(le,{hed:Me,id:Le,previousRating:mt,ratingFormSignInURL:Qe,reviewFormSignInURL:Xe,reviewsCount:Ze,showFeedbackForm:ue,showRatingForm:me,submitFn:async(e,t)=>{const r=he.isAuthenticated&&he.amguuid?he.amguuid:(()=>{const e=F("CN_xid");return""!==e?`anon-${e}`:"anon"})(),o={operationName:"addReview",query:G,variables:{inp:{review:{storyID:Le,rating:t,ratingScale:5,siteID:st,authorID:r},clientMutationId:"0"},coralUserID:r},recaptchaResponse:e};try{await j(lt,o),se(Le,t)}catch(e){throw console.warn(e),e}}}))),pe&&!d(n)&&o.createElement(K,{maxDekLine:3,maxHedLine:3},o.createElement(X,{...n,carouselSlideSizing:ce,isDotClickable:!0,shouldEnableRecircTracking:!0,shouldAlignCenterIfContentIsLess:!0,shouldShowViewAllButton:!1,summaryItemVariation:"TextBelowLeft"}))),o.createElement(P,{group:"ads"},o.createElement(ee,{position:"mid-content",shouldDisplayLabel:!0,hideLabelOnInitialRender:!0})),o.createElement(v,null,o.createElement(v,null,o.createElement(T,null,o.createElement(I,{channelMap:_e,related:Y,recircRelated:Ke})),Te&&o.createElement(E,{className:"recipe-page-taboola-wrapper","data-testid":"ContentFooterTaboolaWidget",taboola:Te}))),o.createElement(v,null,o.createElement(P,{group:"ads"},o.createElement(u,{position:"footer",shouldHoldSpace:!0}))))};pe.propTypes={actionBarLargeScreenVariation:n.oneOf(Y(z)),actionBarOneButtons:n.object,actionBarTwoButtons:n.object,className:n.string,commentAttributes:n.shape({organizationId:n.string.isRequired,commentingUrl:n.string.isRequired}),communityExperience:n.shape({enableCommunityExperience:n.bool}),componentConfig:n.object,coreDataLayer:n.shape({site:n.object}),featuredInCarouselData:n.object,featureFlags:n.object,hasBottomSpacingOnMobileHeader:n.bool,hasMargin:n.bool,hideRecipePageSocialShare:n.bool,infoSliceVariation:n.string,isActionBarStickyLargeScreen:n.bool,recipe:n.shape({aggregateRating:n.number,brandSlug:n.string,campaignUrl:n.string,id:n.string.isRequired,lang:n.string.isRequired,hed:n.string.isRequired,body:n.array,channelMap:n.object,cookbooks:n.arrayOf(n.shape({url:n.string,image:n.object,dangerousCopyrightDisplay:n.string,id:n.string})).isRequired,showBookmark:n.bool,hideBookmarkMobile:n.bool,headerProps:n.shape(C.propTypes).isRequired,hideAffiliateDisclaimer:n.bool,ingredientGroups:n.array.isRequired,interlude:n.shape({isRailEligible:n.bool,strategy:n.object}),isAffiliateLinksEnabled:n.bool,recircMostPopular:n.array,recircRelated:n.array,ratingFormSignInURL:n.string,reviewFormSignInURL:n.string.isRequired,instructions:n.array.isRequired,nutritionalInfo:n.string,prepNotes:n.string,prepNotesHed:n.string,reviewsCount:n.number,socialMedia:n.shape(L.propTypes),tagCloud:n.shape({tags:n.arrayOf(n.shape({name:n.string,url:n.string}))}),times:n.shape({activeTime:n.string,prepTime:n.string,totalTime:n.string}),servingSizeInfo:n.shape({description:n.string}),productCarousel:n.shape(_.propTypes)}).isRequired,related:n.array,shouldAddToRecentlyViewed:n.bool,shouldDisplayFirstActionBar:n.bool,shouldDisplaySecondActionBar:n.bool,showFeaturedInCarousel:n.bool,showFeedbackForm:n.bool,showRatingForm:n.bool,showTwoColumnsForRecipeInfo:n.bool,stickySocialAnchorBottomSelector:n.string,stickySocialAnchorTopSelector:n.string,taboola:n.shape({publisherId:n.string.isRequired,widgetScriptExcludeContentTypes:n.array,widgetScriptTextContentMode:n.string,widgetScriptTextContentContainer:n.string,widgetScriptTextContentPlacement:n.string}),user:n.shape({isAuthenticated:n.bool.isRequired,amguuid:n.string}).isRequired,userPlatform:n.shape({federatedGraphqlUrl:n.string})},pe.displayName="RecipePage",e.exports=D(pe,{keysToPluck:["commentAttributes","communityExperience","componentConfig","coreDataLayer","featureFlags","featuredInCarouselData","recipe","related","taboola","user","userPlatform"]})},11125:(e,t,r)=>{const o=r(96540),{useIntl:a}=r(37243),n=r(5556),i=r(87338),l=r(96482),{asConfiguredComponent:s}=r(12892),d=r(84708).A,{RecipePageCarousel:c}=r(6322),p=({hasIncreasedMargin:e=!1,hasThinBorder:t=!1,hasSmallProductCardStyles:r=!1,products:n,title:l})=>{const{formatMessage:s}=a();return n&&0!==n?.length?o.createElement(c,{hasIncreasedMargin:e,hasThinBorder:t,title:l||s(d.carouselTitle),controlPosition:"top"},n.map(((t,a)=>o.createElement(i,{hasIncreasedMargin:e,hasSmallProductCardStyles:r,product:t,index:a+1,totalProducts:n.length,key:`recipe-product-${a}`})))):null};p.propTypes={hasIncreasedMargin:n.bool,hasSmallProductCardStyles:n.bool,hasThinBorder:n.bool,products:n.arrayOf(n.shape(l.propTypes)).isRequired,title:n.string},p.displayName="RecipeProductCarousel",e.exports=s(p,"RecipeProductCarousel")},87338:(e,t,r)=>{const o=r(96540),a=r(5556),{useInView:n}=r(46762),{buildThresholdArray:i}=r(26695),l=r(96482),s=r(30830),{RecipePageCarouselCard:d}=r(6322),c={width:{sm:"calc(46% - 6px)",lg:"calc(28% - 6px)"},spacing:"6px"},p=o.forwardRef((({hasSmallProductCardStyles:e,index:t,isFirstItem:r,isLastItem:a,product:l,totalProducts:p},u)=>{const[m,g]=o.useState(!1),[y,,h]=n({threshold:i()});return o.useEffect((()=>{h&&h.intersectionRatio&&!m&&h.intersectionRatio>.95&&(g(!0),window.dataLayer&&window.dataLayer.push({event:"carousel-productcards-impression",productcards:{productPosition:t,cardType:"small product card"},carousel:{noOfProducts:p}}))}),[h,m,l,t,p]),o.createElement(s.CarouselItem,{...c,isFirstItem:r,isLastItem:a,ref:u},o.createElement(d,{hasSmallProductCardStyles:e,...l,ref:y,onClick:()=>{window.dataLayer&&window.dataLayer.push({event:"carousel-productcards-click",productcards:{productPosition:t,cardType:"small product card"},carousel:{noOfProducts:p},"gtm.elementUrl":l?.link?.url||""})}}))}));p.propTypes={hasSmallProductCardStyles:a.bool,index:a.number,isFirstItem:a.bool,isLastItem:a.bool,product:a.shape(l.propTypes),totalProducts:a.number},e.exports=p},86238:(e,t,r)=>{const o=r(22949),{asConfiguredComponent:a}=r(12892);e.exports=a(o,"RecipePage")},6322:(e,t,r)=>{const o=r(75999).default,{calculateSpacing:a,getColorToken:n,getTypographyStyles:i,minScreen:l,maxScreen:s,minMaxScreen:d,firstLetterDropCap:c}=r(26865),{BREAKPOINTS:p}=r(96472),u=r(30543),{RecircListTextOverlayWrapper:m}=r(8851),g=r(19607),y=r(30830),h=r(96482),{BodyWrapper:f}=r(29912),{SocialIconsList:b}=r(51e3),C=r(59525),S=r(35676),w=r(86659),{GridItem:k}=r(40653),{InstructionsWrapper:E}=r(5362),P=r(6494),{SplitScreenContentHeaderDek:I,SplitScreenContentHeaderByline:x,SplitScreenContentHeaderRating:v,SplitScreenContentHeaderLedeBlock:R,SplitScreenContentHeaderCaption:T}=r(9481),{RubricWrapper:$}=r(6613),{getPattern:N}=r(30),{StyledTextblock:B}=r(18765),{ButtonWrapper:L}=r(18974),A=r(87339),{SummaryCarouselRow:M}=r(34751),{CarouselListButton:H}=r(44802),{Wrapper:_}=r(5362),{ActionBarButtonText:F,ActionBarButtonIcon:O,ActionBarButton:W}=r(11586),{ActionBarWrapperContent:D}=r(97024),{RatingStar:j}=r(97927),{RatingFormRating:G}=r(6276),q=o(y).withConfig({displayName:"RecipePageCarousel"})`
+  &&& {
+    ${L} {
+      margin-top: 0;
+    }
+  }
+
+  /* Full bleed effect */
+  ${d("0px",p.lg)} {
+    > ul {
+      margin-right: -1.5rem;
+      margin-left: -1.5rem;
+      padding: 0 1.5rem;
+
+      li:last-child {
+        box-sizing: content-box;
+        padding-right: 1.5rem;
+      }
+    }
+  }
+`,U=o(w.WithMargins).withConfig({displayName:"GridWithMarginsWrapper"})`
+  ${k} {
+    grid-column: 12/2;
+  }
+`,V=o(u).withConfig({displayName:"RecipePageWrapper"})`
+  && .grid-layout--adrail {
+    ${l(p.lg)} {
+      grid-template-columns: repeat(8, 1fr) minmax(300px, 4fr);
+
+      .grid-layout__aside {
+        grid-column: 9 / -1;
+      }
+    }
+
+    .grid-layout__content {
+      min-width: 0;
+
+      ${l(p.md)} {
+        grid-column: 2 / -2;
+      }
+
+      ${l(p.lg)} {
+        grid-column: 2 / 8;
+      }
+    }
+
+    @media print {
+      grid-template-columns: fit-content(100%);
+    }
+  }
+
+  &&& .grid-layout-twoColumns {
+    ${l(p.lg)} {
+      grid-template-columns: repeat(12, 1fr);
+
+      .grid_content_columnOne {
+        ${_} {
+          margin-bottom: ${a(5)};
+        }
+        display: flex;
+        grid-column: 2 / 5;
+        flex-direction: column;
+      }
+
+      .grid_content_columnTwo {
+        grid-column: 6 / 12;
+      }
+    }
+  }
+
+  ${f} {
+    .container--body-inner {
+      ${l(p.md)} {
+        grid-column: 1 / -1;
+      }
+
+      .content-card-embed--side-by-side {
+        margin-bottom: ${a(3)};
+      }
+
+      p.has-dropcap {
+        margin-top: ${a(4,"px")};
+
+        &::first-letter {
+          ${c};
+        }
+
+        &.has-dropcap__lead-standard-heading {
+          &::first-letter {
+            padding: 0.1em 0.05em 0 0;
+            color: ${n("colors.consumption.lead.standard.heading")};
+          }
+        }
+      }
+    }
+  }
+  ${m} {
+    ${d("0px",p.lg)} {
+      margin-top: ${a(4)};
+    }
+  }
+
+  .ad--mid-content {
+    margin-bottom: ${a(4)};
+  }
+  ${l(p.xl)} {
+    /* CNE player changes width to 370px at xl
+       FIXME: explore why we need to do this on recipe page only, this is not ideal */
+    .cne-interlude-embed
+      figure[data-testid='cne-interlude-container-right-rail'] {
+      width: 300px;
+    }
+  }
+
+  .recipe-page-taboola-wrapper {
+    --grid-margin: 1.5rem;
+    margin: 0 auto;
+    padding: 0 calc(1 * var(--grid-margin));
+    max-width: 728px;
+  }
+
+  @media print {
+    ${$},
+    ${I},
+    ${x},
+    ${v},
+    ${R},
+    ${T},
+    ${f},
+    ${B},
+    ${q},
+    ${E} .asset-embed,
+    [data-testid="RecipePageMainContent"],
+    .recirc-list-wrapper {
+      display: none;
+    }
+  }
+
+  ${G} {
+    ${j} {
+      transform: scale(1.78);
+      margin: 0 ${a(1.25)};
+    }
+  }
+`,z=o.div.withConfig({displayName:"RecipePageContentBackground"})`
+  ${({theme:e})=>N(e,"content-background")};
+  padding-top: ${a(2)};
+  ${D} {
+    :nth-of-type(1) {
+      .bookmark {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        ${F} {
+          display: none;
+        }
+        ${O} {
+          margin-right: 0;
+        }
+      }
+
+      .print {
+        ${O} {
+          margin-right: 0;
+        }
+      }
+      ${s(p.md)} {
+        .print {
+          display: none;
+        }
+        ${W} {
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    @media print {
+      display: none;
+    }
+  }
+  ${D}:not(:first-child) {
+    .print {
+      ${O} {
+        margin-right: 0;
+      }
+    }
+    ${s(p.md)} {
+      .print {
+        display: none;
+      }
+      ${W} {
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    .overlay-action-bar {
+      .bookmark {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        ${F} {
+          display: none;
+        }
+        ${O} {
+          margin-right: 0;
+        }
+      }
+    }
+    @media print {
+      display: none;
+    }
+  }
+`,Y=o.div.withConfig({displayName:"OverlayActionBar"})`
+  display: flex;
+  justify-content: center;
+`,J=o(g).withConfig({displayName:"RecipePagePostArticleAd"})`
+  ${l(p.lg)} {
+    display: none;
+  }
+`,K=o(h).withConfig({displayName:"RecipePageCarouselCard"})`
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  > *:first-child {
+    width: 100%;
+  }
+`,X=o(P).withConfig({displayName:"RecipePageTagCloud"})`
+  margin-bottom: ${a(4)};
+`,Q=o(S.Circular).withConfig({displayName:"RecipePageSocialIcons"})`
+  ${l(p.lg)} {
+    display: none;
+  }
+
+  ${b} {
+    justify-content: center;
+    ${({hideBookmarkMobile:e})=>e&&".social-icons__list-item--bookmark {\n            display: none;\n          }\n          .social-icons__list-item--bookmarkactivated {\n            display: none;\n          }\n          "}
+  }
+`,Z=o.div.withConfig({displayName:"FeaturedInCarouselWrapper"})`
+  margin: 0 0 ${a(4)} 0;
+  background-color: ${n("colors.discovery.body.light.background")};
+
+  ${M} {
+    background-color: ${n("colors.discovery.body.light.background")};
+
+    .summary-item__icon-button {
+      background-color: rgba(
+        ${n("colors.interactive.base.white",{rgbOnly:!0})},
+        0.9
+      );
+
+      svg path {
+        fill: ${n("colors.interactive.base.black")};
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: rgba(
+          ${n("colors.interactive.base.white",{rgbOnly:!0})},
+          0.9
+        );
+
+        svg path {
+          fill: ${n("colors.interactive.base.black")};
+        }
+      }
+    }
+
+    .summary-item__dek,
+    .summary-item__hed {
+      /* stylelint-disable-next-line value-no-vendor-prefix */
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+    }
+
+    .summary-item__dek {
+      -webkit-line-clamp: ${({maxDekLine:e})=>e};
+    }
+
+    .summary-item__hed.summary-item__hed {
+      ${i("typography.definitions.discovery.hed-core-secondary")}
+      -webkit-line-clamp: ${({maxDekLine:e})=>e};
+    }
+
+    ${H} {
+      top: 33%;
+    }
+  }
+`,ee=o(C).withConfig({displayName:"RecipePageInfoSlice"})`
+  margin-bottom: ${a(4)};
+`,te=o(A).withConfig({displayName:"FeaturedInCarousel"})``;e.exports={FeaturedInCarouselWrapper:Z,FeaturedInCarousel:te,GridWithMarginsWrapper:U,RecipePageWrapper:V,RecipePagePostArticleAd:J,RecipePageCarousel:q,RecipePageCarouselCard:K,RecipePageTagCloud:X,RecipePageSocialIcons:Q,RecipePageInfoSlice:ee,RecipePageContentBackground:z,OverlayActionBar:Y}},84708:(e,t,r)=>{const o=r(37243);t.A=(0,o.defineMessages)({carouselTitle:{id:"RecipeProductCarousel.Title",defaultMessage:"What you’ll need",description:"Fallback title for recipe product carousal",isConfigurable:!0},utilityLabel:{id:"ReviewListContainer.UtilityLabel",defaultMessage:"Back to Top",description:"Utility label for review list container"},"Prep Time":{id:"RecipePage.PrepTime",defaultMessage:"Prep Time",description:"Text for diplaying preperation time in Recipe page",isConfigurable:!0},"Active Time":{id:"RecipePage.ActiveTime",defaultMessage:"Active Time",description:"Text for diplaying active time in Recipe page",isConfigurable:!0},"Total Time":{id:"RecipePage.TotalTime",defaultMessage:"Total Time",description:"Text for diplaying total time in Recipe page",isConfigurable:!0},Yield:{id:"RecipePage.Yield",defaultMessage:"Yield",description:"Text for diplaying yield in Recipe page",isConfigurable:!0},recipeInfo:{id:"RecipePage.info",defaultMessage:"Recipe information",description:"Heading to display Recipe information"}})},88389:function(e,t,r){var o=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});const a=o(r(86238));(0,o(r(41782)).default)(a.default)}},a={};function n(e){var t=a[e];if(void 0!==t)return t.exports;var r=a[e]={id:e,loaded:!1,exports:{}};return o[e].call(r.exports,r,r.exports,n),r.loaded=!0,r.exports}n.m=o,e=[],n.O=(t,r,o,a)=>{if(!r){var i=1/0;for(c=0;c<e.length;c++){for(var[r,o,a]=e[c],l=!0,s=0;s<r.length;s++)(!1&a||i>=a)&&Object.keys(n.O).every((e=>n.O[e](r[s])))?r.splice(s--,1):(l=!1,a<i&&(i=a));if(l){e.splice(c--,1);var d=o();void 0!==d&&(t=d)}}return t}a=a||0;for(var c=e.length;c>0&&e[c-1][2]>a;c--)e[c]=e[c-1];e[c]=[r,o,a]},n.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return n.d(t,{a:t}),t},r=Object.getPrototypeOf?e=>Object.getPrototypeOf(e):e=>e.__proto__,n.t=function(e,o){if(1&o&&(e=this(e)),8&o)return e;if("object"==typeof e&&e){if(4&o&&e.__esModule)return e;if(16&o&&"function"==typeof e.then)return e}var a=Object.create(null);n.r(a);var i={};t=t||[null,r({}),r([]),r(r)];for(var l=2&o&&e;"object"==typeof l&&!~t.indexOf(l);l=r(l))Object.getOwnPropertyNames(l).forEach((t=>i[t]=()=>e[t]));return i.default=()=>e,n.d(a,i),a},n.d=(e,t)=>{for(var r in t)n.o(t,r)&&!n.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},n.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),n.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.nmd=e=>(e.paths=[],e.children||(e.children=[]),e),(()=>{var e={6251:0};n.O.j=t=>0===e[t];var t=(t,r)=>{var o,a,[i,l,s]=r,d=0;if(i.some((t=>0!==e[t]))){for(o in l)n.o(l,o)&&(n.m[o]=l[o]);if(s)var c=s(n)}for(t&&t(r);d<i.length;d++)a=i[d],n.o(e,a)&&e[a]&&e[a][0](),e[a]=0;return n.O(c)},r=globalThis.webpackChunkverso=globalThis.webpackChunkverso||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),n.nc=void 0;var i=n.O(void 0,[4069,9504,2641,4039,6075,3405,1782,7035,7368,2031],(()=>n(88389)));i=n.O(i)})();
